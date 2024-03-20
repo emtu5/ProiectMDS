@@ -2,8 +2,8 @@
 
 ## User Stories
 
-- Ca jucător vreau să pot schimb setările jocului.
-- Ca jucător vreau să mă pot mișca în joc cu usurință.
+- Ca jucător vreau să pot schimb setările jocului (rezoluție, volum).
+- Ca jucător vreau să mă pot mișca în joc astfel: mișcare ortodiagonală, dash, jump.
 - Ca jucător, vreau să văd unde mă aflu pe harta jocului.
 - Ca jucător vreau să mi se rețină scorul final într-un clasament.
 - Ca jucător vreau să-mi pot schimba profilul de pe care mă joc.

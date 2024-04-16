@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://dw68aduuiyp3e"]
+
+[ext_resource type="Texture2D" uid="uid://db63ygd6cb88" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_1.png" id="1_f00fa"]
+[ext_resource type="Script" path="res://Skeleton.gd" id="1_x5ymj"]
+[ext_resource type="Texture2D" uid="uid://ba8bttomlh64v" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_2.png" id="2_hw44d"]
+[ext_resource type="Texture2D" uid="uid://bljgm7j715t6y" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_3.png" id="3_ue80x"]
+[ext_resource type="Texture2D" uid="uid://do560cfq77jyr" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_4.png" id="4_umqtv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p2ayn"]
+radius = 6.0
+height = 14.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m3eo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f00fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hw44d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ue80x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_umqtv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uilmu"]
+radius = 82.0
+
+[node name="Skeleton" type="CharacterBody2D"]
+script = ExtResource("1_x5ymj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_p2ayn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_m3eo7")
+animation = &"Idle"
+frame_progress = 0.179928
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_uilmu")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dytdp2wtn8i01"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_7a0ja"]
+[ext_resource type="Texture2D" uid="uid://db63ygd6cb88" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_1.png" id="1_vbmpx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8fgy"]
+radius = 9.0
+height = 18.0
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_7a0ja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_j8fgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vbmpx")

@@ -7,7 +7,7 @@ var health = 10
 const SPEED = 50
 
 func _physics_process(delta):
-	player = get_node("/root/MyTest/Player")
+	player = get_node("../../Player")
 	get_node("AnimatedSprite2D").play("Idle")
 	var direction = global_position.direction_to(player.global_position)
 	if chase == true:

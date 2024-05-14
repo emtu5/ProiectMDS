@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqmd0ybvrh71"]
+[gd_scene load_steps=13 format=3 uid="uid://dqmd0ybvrh71"]
 
-[ext_resource type="Script" path="res://playerscript.gd" id="1_eyq3d"]
+[ext_resource type="Script" path="res://player.gd" id="1_eoxqs"]
 [ext_resource type="Texture2D" uid="uid://8b32wdsk4qvn" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_1.png" id="1_ouw2i"]
 [ext_resource type="Texture2D" uid="uid://borsnth5fb1lc" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_2.png" id="2_ksyhd"]
 [ext_resource type="Texture2D" uid="uid://d2swppn4oysdc" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_3.png" id="3_81i8w"]
 [ext_resource type="Texture2D" uid="uid://bx5mcxecg2hct" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_4.png" id="4_brgtj"]
+[ext_resource type="Texture2D" uid="uid://cceihpdldlho2" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_1.png" id="6_opfho"]
+[ext_resource type="Texture2D" uid="uid://lhdh8ds0tqun" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_2.png" id="7_7lwtr"]
+[ext_resource type="Texture2D" uid="uid://b7cauqww8w4fh" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_3.png" id="8_5r38l"]
+[ext_resource type="Texture2D" uid="uid://dqup4dfgwj1lu" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_4.png" id="9_mf3tf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yxq2l"]
 radius = 7.0
@@ -28,10 +32,30 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_opfho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7lwtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5r38l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mf3tf")
+}],
+"loop": true,
+"name": &"Idle2",
+"speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pm0ur"]
+bg_color = Color(0.129412, 0.666667, 0, 1)
+
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_eyq3d")
+script = ExtResource("1_eoxqs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_yxq2l")
@@ -39,10 +63,35 @@ shape = SubResource("CapsuleShape2D_yxq2l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_51ihy")
-animation = &"Idle"
-frame_progress = 0.810073
+animation = &"Idle2"
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Node2D"]
 position = Vector2(14, 0)
+
+[node name="BulletTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="TimeRemaining" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -8.0
+offset_top = 10.0
+offset_right = 8.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0, 0.882353, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.027451, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_pm0ur")
+max_value = 5.0
+step = 1.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 34.0

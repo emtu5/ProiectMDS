@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw68aduuiyp3e"]
+[gd_scene load_steps=10 format=3 uid="uid://dw68aduuiyp3e"]
 
 [ext_resource type="Texture2D" uid="uid://db63ygd6cb88" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_1.png" id="1_f00fa"]
 [ext_resource type="Script" path="res://Skeleton.gd" id="1_x5ymj"]
 [ext_resource type="Texture2D" uid="uid://ba8bttomlh64v" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_2.png" id="2_hw44d"]
 [ext_resource type="Texture2D" uid="uid://bljgm7j715t6y" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_3.png" id="3_ue80x"]
 [ext_resource type="Texture2D" uid="uid://do560cfq77jyr" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_4.png" id="4_umqtv"]
+[ext_resource type="Script" path="res://HealthBar.gd" id="6_c6p0c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p2ayn"]
 radius = 6.0
@@ -49,6 +50,16 @@ frame_progress = 0.179928
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_uilmu")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = -7.0
+offset_top = 8.0
+offset_right = 129.0
+offset_bottom = 35.0
+scale = Vector2(0.1, 0.1)
+show_percentage = false
+script = ExtResource("6_c6p0c")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

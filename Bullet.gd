@@ -12,11 +12,12 @@ func bye():
 
 # Functie pentru a seta traictoria gloantelor
 func _physics_process(delta):
-	var collision_info = move_and_collide(velocity.normalized() * delta * speed)
-	if collision_info:
-		bye()
+	move_and_collide(velocity.normalized() * delta * speed)
+
 
 func _on_damage_area_body_entered(body):
 	if body.has_method("take_damage"):
 		body.take_damage(DAMAGE)
+		bye()
+	elif not body.has_method("name"):
 		bye()

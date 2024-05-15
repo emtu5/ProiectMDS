@@ -3,10 +3,11 @@ extends CharacterBody2D
 
 var player
 var chase = false
-var health = 10
+const MAX_HEALTH : float = 15.0
+var health : float = MAX_HEALTH
 const SPEED = 50
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	player = get_node("../../Player")
 	get_node("AnimatedSprite2D").play("Idle")
 	var direction = global_position.direction_to(player.global_position)
@@ -36,5 +37,6 @@ func _on_player_detection_body_exited(body):
 
 func take_damage(amount):
 	health -= amount
+	$HealthBar.update_health_bar()
 	if health <= 0:
 		queue_free()

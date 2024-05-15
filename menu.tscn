@@ -1,14 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://crxs5apufssyr"]
+[gd_scene load_steps=4 format=3 uid="uid://crxs5apufssyr"]
 
 [ext_resource type="Texture2D" uid="uid://dwe8kockg4mpv" path="res://Art/placeholder_menu_image.jpg" id="1_dos8w"]
+[ext_resource type="Script" path="res://menu.gd" id="1_i0tb0"]
+[ext_resource type="PackedScene" uid="uid://c7cu5mcptt6og" path="res://node_2d.tscn" id="1_lqwdt"]
 
-[node name="Menu" type="BoxContainer"]
+[node name="Menu" type="BoxContainer" node_paths=PackedStringArray("_start", "_settings", "_exit")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+script = ExtResource("1_i0tb0")
+_startScene = ExtResource("1_lqwdt")
+_start = NodePath("Menu Margin/Menu VBox/Start")
+_settings = NodePath("Menu Margin/Menu VBox/Settings")
+_exit = NodePath("Menu Margin/Menu VBox/Exit")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1500, 1000)

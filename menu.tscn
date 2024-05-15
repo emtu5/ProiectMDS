@@ -4,18 +4,23 @@
 [ext_resource type="Script" path="res://menu.gd" id="1_i0tb0"]
 [ext_resource type="PackedScene" uid="uid://c7cu5mcptt6og" path="res://node_2d.tscn" id="1_lqwdt"]
 
-[node name="Menu" type="BoxContainer" node_paths=PackedStringArray("_start", "_settings", "_exit")]
+[node name="Menu" type="BoxContainer" node_paths=PackedStringArray("_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+alignment = 1
 script = ExtResource("1_i0tb0")
 _startScene = ExtResource("1_lqwdt")
 _start = NodePath("Menu Margin/Menu VBox/Start")
 _settings = NodePath("Menu Margin/Menu VBox/Settings")
+_closeSettings = NodePath("Settings Panel/Margin/VBox/Close Settings")
 _exit = NodePath("Menu Margin/Menu VBox/Exit")
+_mainMenu = NodePath("Menu Margin")
+_settingsMenu = NodePath("Settings Panel")
+_volumeSlider = NodePath("Settings Panel/Margin/VBox/Volume/Slider")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1500, 1000)
@@ -53,3 +58,36 @@ text = "Settings"
 [node name="Exit" type="Button" parent="Menu Margin/Menu VBox"]
 layout_mode = 2
 text = "Exit"
+
+[node name="Settings Panel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Margin" type="MarginContainer" parent="Settings Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBox" type="VBoxContainer" parent="Settings Panel/Margin"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Volume" type="VBoxContainer" parent="Settings Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings Panel/Margin/VBox/Volume"]
+layout_mode = 2
+text = "Volume:"
+horizontal_alignment = 1
+
+[node name="Slider" type="HSlider" parent="Settings Panel/Margin/VBox/Volume"]
+layout_mode = 2
+
+[node name="Close Settings" type="Button" parent="Settings Panel/Margin/VBox"]
+layout_mode = 2
+text = "Close Options"

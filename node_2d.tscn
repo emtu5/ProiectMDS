@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7cu5mcptt6og"]
+[gd_scene load_steps=7 format=3 uid="uid://c7cu5mcptt6og"]
 
 [ext_resource type="Texture2D" uid="uid://b0acbxbfhjgwi" path="res://Art/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="1_gcpox"]
 [ext_resource type="PackedScene" uid="uid://dqmd0ybvrh71" path="res://player.tscn" id="2_e5ppo"]
 [ext_resource type="PackedScene" uid="uid://dw68aduuiyp3e" path="res://Skeleton.tscn" id="3_hysbw"]
+[ext_resource type="PackedScene" uid="uid://btlmujgw2q6yp" path="res://Skull.tscn" id="4_qw35m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhkwb"]
 texture = ExtResource("1_gcpox")
@@ -341,3 +342,6 @@ position = Vector2(77, -65)
 
 [node name="Skeleton" parent="Enemies" instance=ExtResource("3_hysbw")]
 position = Vector2(204, -53)
+
+[node name="Skull" parent="Enemies" instance=ExtResource("4_qw35m")]
+position = Vector2(313, -146)

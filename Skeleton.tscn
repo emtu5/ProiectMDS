@@ -44,7 +44,8 @@ shape = SubResource("CapsuleShape2D_p2ayn")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m3eo7")
 animation = &"Idle"
-frame_progress = 0.179928
+frame = 1
+frame_progress = 0.73771
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 

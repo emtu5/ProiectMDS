@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwe8kockg4mpv" path="res://Art/placeholder_menu_image.jpg" id="1_dos8w"]
 [ext_resource type="Script" path="res://menu.gd" id="1_i0tb0"]
-[ext_resource type="PackedScene" uid="uid://c7cu5mcptt6og" path="res://node_2d.tscn" id="1_lqwdt"]
+[ext_resource type="PackedScene" uid="uid://bposhhcmx4wae" path="res://levels/Level1.tscn" id="2_qq05i"]
 
 [node name="Menu" type="BoxContainer" node_paths=PackedStringArray("_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider")]
 anchors_preset = 15
@@ -13,7 +13,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 alignment = 1
 script = ExtResource("1_i0tb0")
-_startScene = ExtResource("1_lqwdt")
+_startScene = ExtResource("2_qq05i")
 _start = NodePath("Menu Margin/Menu VBox/Start")
 _settings = NodePath("Menu Margin/Menu VBox/Settings")
 _closeSettings = NodePath("Settings Panel/Margin/VBox/Close Settings")

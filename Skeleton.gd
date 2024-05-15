@@ -1,16 +1,14 @@
 extends CharacterBody2D
 
 
-var player
+@export var player : Node
 var chase = false
 const MAX_HEALTH : float = 15.0
 var health : float = MAX_HEALTH
 const SPEED = 50
 
 func _ready():
-	player = get_node("../../Player")
 	get_node("AnimatedSprite2D").play("Idle")
-	
 
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://menu.gd" id="1_i0tb0"]
 [ext_resource type="PackedScene" uid="uid://bposhhcmx4wae" path="res://levels/Level1.tscn" id="2_qq05i"]
 
-[node name="Background" type="TextureRect"]
+[node name="Background" type="TextureRect" node_paths=PackedStringArray("_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,6 +12,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_dos8w")
 expand_mode = 2
+script = ExtResource("1_i0tb0")
+_startScene = ExtResource("2_qq05i")
+_start = NodePath("Menu/Menu Margin/Menu VBox/Start")
+_settings = NodePath("Menu/Menu Margin/Menu VBox/Settings")
+_closeSettings = NodePath("Menu/Settings Panel/Margin/VBox/Close Settings")
+_exit = NodePath("Menu/Menu Margin/Menu VBox/Exit")
+_mainMenu = NodePath("Menu/Menu Margin")
+_settingsMenu = NodePath("Menu/Settings Panel")
+_volumeSlider = NodePath("Menu/Settings Panel/Margin/VBox/Volume/Slider")
 
 [node name="Freepik Credit" type="Label" parent="."]
 layout_mode = 1
@@ -28,7 +37,7 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Image by Freepik"
 
-[node name="Menu" type="BoxContainer" parent="." node_paths=PackedStringArray("_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider")]
+[node name="Menu" type="BoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,15 +46,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 alignment = 1
-script = ExtResource("1_i0tb0")
-_startScene = ExtResource("2_qq05i")
-_start = NodePath("Menu Margin/Menu VBox/Start")
-_settings = NodePath("Menu Margin/Menu VBox/Settings")
-_closeSettings = NodePath("Settings Panel/Margin/VBox/Close Settings")
-_exit = NodePath("Menu Margin/Menu VBox/Exit")
-_mainMenu = NodePath("Menu Margin")
-_settingsMenu = NodePath("Settings Panel")
-_volumeSlider = NodePath("Settings Panel/Margin/VBox/Volume/Slider")
 
 [node name="Menu Margin" type="MarginContainer" parent="Menu"]
 layout_mode = 2

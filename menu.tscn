@@ -4,7 +4,32 @@
 [ext_resource type="Script" path="res://menu.gd" id="1_i0tb0"]
 [ext_resource type="PackedScene" uid="uid://bposhhcmx4wae" path="res://levels/Level1.tscn" id="2_qq05i"]
 
-[node name="Menu" type="BoxContainer" node_paths=PackedStringArray("_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider")]
+[node name="Background" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dos8w")
+expand_mode = 2
+
+[node name="Freepik Credit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -24.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Image by Freepik"
+
+[node name="Menu" type="BoxContainer" parent="." node_paths=PackedStringArray("_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider")]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,19 +47,7 @@ _mainMenu = NodePath("Menu Margin")
 _settingsMenu = NodePath("Settings Panel")
 _volumeSlider = NodePath("Settings Panel/Margin/VBox/Volume/Slider")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1500, 1000)
-texture = ExtResource("1_dos8w")
-
-[node name="Freepik Credit" type="Label" parent="Background"]
-offset_left = -1492.0
-offset_top = -997.0
-offset_right = -1360.0
-offset_bottom = -974.0
-scale = Vector2(0.5, 0.5)
-text = "Image by Freepik"
-
-[node name="Menu Margin" type="MarginContainer" parent="."]
+[node name="Menu Margin" type="MarginContainer" parent="Menu"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -43,51 +56,51 @@ theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 80
 
-[node name="Menu VBox" type="VBoxContainer" parent="Menu Margin"]
+[node name="Menu VBox" type="VBoxContainer" parent="Menu/Menu Margin"]
 layout_mode = 2
 alignment = 1
 
-[node name="Start" type="Button" parent="Menu Margin/Menu VBox"]
+[node name="Start" type="Button" parent="Menu/Menu Margin/Menu VBox"]
 layout_mode = 2
 text = "Start"
 
-[node name="Settings" type="Button" parent="Menu Margin/Menu VBox"]
+[node name="Settings" type="Button" parent="Menu/Menu Margin/Menu VBox"]
 layout_mode = 2
 text = "Settings"
 
-[node name="Exit" type="Button" parent="Menu Margin/Menu VBox"]
+[node name="Exit" type="Button" parent="Menu/Menu Margin/Menu VBox"]
 layout_mode = 2
 text = "Exit"
 
-[node name="Settings Panel" type="PanelContainer" parent="."]
+[node name="Settings Panel" type="PanelContainer" parent="Menu"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Margin" type="MarginContainer" parent="Settings Panel"]
+[node name="Margin" type="MarginContainer" parent="Menu/Settings Panel"]
 layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBox" type="VBoxContainer" parent="Settings Panel/Margin"]
+[node name="VBox" type="VBoxContainer" parent="Menu/Settings Panel/Margin"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="Volume" type="VBoxContainer" parent="Settings Panel/Margin/VBox"]
+[node name="Volume" type="VBoxContainer" parent="Menu/Settings Panel/Margin/VBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Settings Panel/Margin/VBox/Volume"]
+[node name="Label" type="Label" parent="Menu/Settings Panel/Margin/VBox/Volume"]
 layout_mode = 2
 text = "Volume:"
 horizontal_alignment = 1
 
-[node name="Slider" type="HSlider" parent="Settings Panel/Margin/VBox/Volume"]
+[node name="Slider" type="HSlider" parent="Menu/Settings Panel/Margin/VBox/Volume"]
 layout_mode = 2
 
-[node name="Close Settings" type="Button" parent="Settings Panel/Margin/VBox"]
+[node name="Close Settings" type="Button" parent="Menu/Settings Panel/Margin/VBox"]
 layout_mode = 2
 text = "Close Options"

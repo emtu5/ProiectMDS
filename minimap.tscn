@@ -20,6 +20,7 @@ color = Color(0.796263, 0.630445, 0.307495, 1)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/ColorRect"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 41.0

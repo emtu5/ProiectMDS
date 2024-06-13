@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bposhhcmx4wae"]
+[gd_scene load_steps=12 format=3 uid="uid://bposhhcmx4wae"]
 
 [ext_resource type="Script" path="res://levels/Level1.gd" id="1_lyhy6"]
 [ext_resource type="Texture2D" uid="uid://b0acbxbfhjgwi" path="res://Art/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="1_ytrhg"]
 [ext_resource type="PackedScene" uid="uid://dqmd0ybvrh71" path="res://player.tscn" id="2_8nybb"]
 [ext_resource type="Script" path="res://player2.gd" id="3_5nw53"]
+[ext_resource type="PackedScene" uid="uid://dw68aduuiyp3e" path="res://Skeleton.tscn" id="4_wovns"]
 [ext_resource type="PackedScene" uid="uid://bucnb6qprntn4" path="res://minimap.tscn" id="5_y4a7k"]
-[ext_resource type="PackedScene" uid="uid://06cfc25x4cfs" path="res://EnemySpawner.tscn" id="6_lovxa"]
+[ext_resource type="PackedScene" uid="uid://txt6ng5ktrfn" path="res://pause_menu.tscn" id="8_73bhi"]
+[ext_resource type="PackedScene" uid="uid://06cfc25x4cfs" path="res://EnemySpawner.tscn" id="8_irstq"]
+[ext_resource type="PackedScene" uid="uid://c5223p4u7ga30" path="res://Coin.tscn" id="9_kyg43"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhkwb"]
 texture = ExtResource("1_ytrhg")
@@ -450,7 +453,7 @@ script = ExtResource("1_lyhy6")
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_esfgh")
-collision_visibility_mode = 1
+collision_visibility_mode = 2
 format = 2
 layer_0/name = "Ground"
 layer_0/z_index = -1
@@ -471,5 +474,102 @@ script = ExtResource("3_5nw53")
 
 [node name="Minimap" parent="." instance=ExtResource("5_y4a7k")]
 
-[node name="SkeletonSpawner" parent="." instance=ExtResource("6_lovxa")]
-position = Vector2(326, 247)
+[node name="PauseMenu" parent="." instance=ExtResource("8_73bhi")]
+offset_left = 429.0
+offset_top = 442.0
+offset_right = 429.0
+offset_bottom = 442.0
+
+[node name="SkeletonSpawner" parent="." instance=ExtResource("8_irstq")]
+position = Vector2(328, 248)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Skeleton" parent="Enemies" instance=ExtResource("4_wovns")]
+position = Vector2(216, 392)
+
+[node name="Skeleton2" parent="Enemies" instance=ExtResource("4_wovns")]
+position = Vector2(216, 104)
+
+[node name="Skeleton3" parent="Enemies" instance=ExtResource("4_wovns")]
+position = Vector2(440, 112)
+
+[node name="Skeleton4" parent="Enemies" instance=ExtResource("4_wovns")]
+position = Vector2(440, 384)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(144, 248)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(144, 232)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(144, 264)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(328, 248)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(328, 232)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(328, 264)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(344, 248)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(344, 232)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(344, 264)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(312, 248)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(312, 232)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(312, 264)
+
+[node name="Coin13" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(512, 248)
+
+[node name="Coin14" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(512, 232)
+
+[node name="Coin15" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(512, 264)
+
+[node name="Coin16" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(328, 104)
+
+[node name="Coin17" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(344, 104)
+
+[node name="Coin18" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(312, 104)
+
+[node name="Coin19" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(328, 392)
+
+[node name="Coin20" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(344, 392)
+
+[node name="Coin21" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(312, 392)
+
+[node name="Coin22" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(200, 104)
+
+[node name="Coin23" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(200, 392)
+
+[node name="Coin24" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(456, 112)
+
+[node name="Coin25" parent="Coins" instance=ExtResource("9_kyg43")]
+position = Vector2(456, 384)

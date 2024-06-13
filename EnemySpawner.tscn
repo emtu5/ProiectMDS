@@ -12,7 +12,7 @@ size = Vector2(54, 48)
 script = ExtResource("1_4158k")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="SpawnArea" type="Area2D" parent="."]
 

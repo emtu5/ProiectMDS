@@ -20,11 +20,10 @@ func _on_timer_timeout():
 		if spawn_position != null:
 			# Randomly choose between spawning a skeleton or a skull
 			var enemy
-			enemy = skull_scene.instantiate()
-			#if randi() % 2 == 0:
-				#enemy = skeleton_scene.instantiate()
-			#else:
-				#enemy = skull_scene.instantiate()
+			if randi() % 2 == 0:
+				enemy = skeleton_scene.instantiate()
+			else:
+				enemy = skull_scene.instantiate()
 			enemy.position = spawn_position
 			print("from spawn point")
 			print(enemy.position)

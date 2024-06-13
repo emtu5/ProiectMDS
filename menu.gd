@@ -1,4 +1,4 @@
-extends BoxContainer
+extends Node
 
 @export var _startScene : PackedScene;
 @export var _start : Button;

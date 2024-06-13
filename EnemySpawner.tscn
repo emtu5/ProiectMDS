@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://06cfc25x4cfs"]
+
+[ext_resource type="Script" path="res://EnemySpawner.gd" id="1_4158k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rujy1"]
+size = Vector2(186, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jlxv"]
+size = Vector2(54, 48)
+
+[node name="SkeletonSpawner" type="Node2D"]
+script = ExtResource("1_4158k")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="SpawnArea" type="Area2D" parent="."]
+
+[node name="Spawn" type="CollisionShape2D" parent="SpawnArea"]
+shape = SubResource("RectangleShape2D_rujy1")
+
+[node name="RestrictedArea" type="Area2D" parent="."]
+
+[node name="NoSpawn" type="CollisionShape2D" parent="RestrictedArea"]
+shape = SubResource("RectangleShape2D_4jlxv")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

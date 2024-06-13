@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bucnb6qprntn4"]
+
+[ext_resource type="Script" path="res://levels/minimap.gd" id="1_lxf1t"]
+
+[node name="Minimap" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_lxf1t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 241.0
+offset_top = 6.0
+offset_right = 283.0
+offset_bottom = 48.0
+color = Color(0.796263, 0.630445, 0.307495, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/ColorRect"]
+texture_filter = 1
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 41.0
+offset_bottom = 41.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/ColorRect/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(40, 40)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/ColorRect/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.1, 0.1)

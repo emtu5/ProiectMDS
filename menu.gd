@@ -9,7 +9,11 @@ extends BoxContainer
 @export var _settingsMenu : Node;
 @export var _volumeSlider : Slider;
 
+var _prev_scale_factor : float
+
 func _ready():
+	_prev_scale_factor = get_tree().root.content_scale_factor
+	get_tree().root.content_scale_factor = 1
 	_start.pressed.connect(_start_button)
 	_settings.pressed.connect(_settings_button)
 	_closeSettings.pressed.connect(_close_settings_button);
@@ -20,6 +24,7 @@ func _process(delta):
 	pass
 
 func _start_button():
+	get_tree().root.content_scale_factor = _prev_scale_factor
 	get_tree().root.add_child(_startScene.instantiate())
 	queue_free()
 

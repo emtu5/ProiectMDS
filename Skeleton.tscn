@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw68aduuiyp3e"]
+[gd_scene load_steps=11 format=3 uid="uid://dw68aduuiyp3e"]
 
 [ext_resource type="Texture2D" uid="uid://db63ygd6cb88" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skeleton1/v1/skeleton_v1_1.png" id="1_f00fa"]
 [ext_resource type="Script" path="res://Skeleton.gd" id="1_x5ymj"]
@@ -8,8 +8,8 @@
 [ext_resource type="Script" path="res://HealthBar.gd" id="6_c6p0c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p2ayn"]
-radius = 6.0
-height = 14.0
+radius = 5.0
+height = 12.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m3eo7"]
 animations = [{
@@ -33,6 +33,10 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uilmu"]
 radius = 82.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r70vb"]
+radius = 7.0
+height = 16.0
 
 [node name="Skeleton" type="CharacterBody2D"]
 script = ExtResource("1_x5ymj")
@@ -62,5 +66,15 @@ scale = Vector2(0.1, 0.1)
 show_percentage = false
 script = ExtResource("6_c6p0c")
 
+[node name="DamageDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDetection"]
+shape = SubResource("CapsuleShape2D_r70vb")
+
+[node name="DamageTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="DamageDetection" to="." method="_on_damage_detection_body_entered"]
+[connection signal="body_exited" from="DamageDetection" to="." method="_on_damage_detection_body_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

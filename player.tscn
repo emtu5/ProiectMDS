@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqmd0ybvrh71"]
+[gd_scene load_steps=14 format=3 uid="uid://dqmd0ybvrh71"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_eoxqs"]
 [ext_resource type="Texture2D" uid="uid://8b32wdsk4qvn" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_1.png" id="1_ouw2i"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://lhdh8ds0tqun" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_2.png" id="7_7lwtr"]
 [ext_resource type="Texture2D" uid="uid://b7cauqww8w4fh" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_3.png" id="8_5r38l"]
 [ext_resource type="Texture2D" uid="uid://dqup4dfgwj1lu" path="res://Art/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v2/priest2_v2_4.png" id="9_mf3tf"]
+[ext_resource type="PackedScene" uid="uid://txt6ng5ktrfn" path="res://pause_menu.tscn" id="10_b58up"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yxq2l"]
 radius = 7.0
@@ -95,3 +96,9 @@ offset_left = -21.0
 offset_top = 11.0
 offset_right = 20.0
 offset_bottom = 34.0
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_b58up")]
+offset_left = -36.0
+offset_top = -32.0
+offset_right = -36.0
+offset_bottom = -32.0

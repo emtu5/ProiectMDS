@@ -8,6 +8,7 @@ var health : float = MAX_HEALTH
 const SPEED = 50
 
 func _ready():
+	player = get_node("../../Player")
 	get_node("AnimatedSprite2D").play("Idle")
 
 func _physics_process(_delta):
@@ -40,4 +41,5 @@ func take_damage(amount):
 	health -= amount
 	$HealthBar.update_health_bar()
 	if health <= 0:
+		player.score += 1
 		queue_free()

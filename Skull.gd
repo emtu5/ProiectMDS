@@ -11,8 +11,6 @@ var shoot_interval = 1.5
 const BULLET_SPEED = 200.0
 
 func _ready():
-	print("from _ready")
-	print(global_position)
 	player = get_node("../../Player")
 	get_node("AnimatedSprite2D").play("Idle")
 
@@ -39,6 +37,7 @@ func shoot(angle_to_player):
 	print(bullet.position)
 	bullet.rotation = angle_to_player  # Ensure the bullet faces the correct direction
 	bullet.velocity = Vector2(cos(angle_to_player), sin(angle_to_player)) * BULLET_SPEED  # Calculate velocity based on angle
+	bullet.sender = "Skull"
 	get_parent().add_child(bullet)
 
 func _on_player_detection_body_entered(body):
@@ -56,3 +55,4 @@ func take_damage(amount):
 	$HealthBar.update_health_bar()
 	if health <= 0:
 		queue_free()
+		player.score += 1

@@ -8,8 +8,8 @@
 [ext_resource type="Script" path="res://HealthBar.gd" id="6_jr25n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sa8cb"]
-radius = 6.0
-height = 16.0
+radius = 5.0
+height = 14.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrmn0"]
 animations = [{

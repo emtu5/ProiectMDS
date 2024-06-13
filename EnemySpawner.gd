@@ -25,8 +25,6 @@ func _on_timer_timeout():
 			else:
 				enemy = skull_scene.instantiate()
 			enemy.position = spawn_position
-			print("from spawn point")
-			print(enemy.position)
 			add_child(enemy)
 			enemies.append(enemy)
 			enemy.connect("tree_exited", Callable(self, "_on_enemy_tree_exited"))

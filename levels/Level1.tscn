@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b0acbxbfhjgwi" path="res://Art/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="1_ytrhg"]
 [ext_resource type="PackedScene" uid="uid://dqmd0ybvrh71" path="res://player.tscn" id="2_8nybb"]
 [ext_resource type="Script" path="res://player2.gd" id="3_5nw53"]
-[ext_resource type="PackedScene" uid="uid://dw68aduuiyp3e" path="res://Skeleton.tscn" id="4_wovns"]
 [ext_resource type="PackedScene" uid="uid://bucnb6qprntn4" path="res://minimap.tscn" id="5_y4a7k"]
+[ext_resource type="PackedScene" uid="uid://06cfc25x4cfs" path="res://EnemySpawner.tscn" id="6_lovxa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhkwb"]
 texture = ExtResource("1_ytrhg")
@@ -469,8 +469,7 @@ texture_filter = 1
 position = Vector2(545, 250)
 script = ExtResource("3_5nw53")
 
-[node name="Skeleton" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_wovns")]
-position = Vector2(331, 251)
-player = NodePath("../Player")
-
 [node name="Minimap" parent="." instance=ExtResource("5_y4a7k")]
+
+[node name="SkeletonSpawner" parent="." instance=ExtResource("6_lovxa")]
+position = Vector2(326, 247)

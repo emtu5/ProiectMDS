@@ -21,6 +21,7 @@ texture = ExtResource("1_6qkxh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Bullet"]]
 shape = SubResource("CapsuleShape2D_l3x4a")
+disabled = true
 
 [node name="DamageArea" type="Area2D" parent="."]
 

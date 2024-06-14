@@ -53,7 +53,8 @@ func name():
 
 ## Setez label-ul la hp (e cam mare, ma mai gandesc daca sa il folosesc sau nu)
 func set_hp_label():
-	$HealthLabel.text =  "A"
+	##$HealthLabel.text =  "A"
+	pass
 
 ## Setez bara de hp(se updateaza hp ul actual)
 func set_hp_bar():

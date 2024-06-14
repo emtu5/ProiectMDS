@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://menu.gd" id="1_i0tb0"]
 [ext_resource type="PackedScene" uid="uid://bposhhcmx4wae" path="res://levels/Level1.tscn" id="2_qq05i"]
 
-[node name="Background" type="TextureRect" node_paths=PackedStringArray("_loadSave", "_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider")]
+[node name="Background" type="TextureRect" node_paths=PackedStringArray("_loadSave", "_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider", "_leaderboardLabel")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,6 +22,7 @@ _exit = NodePath("Menu/Menu Margin/Menu VBox/Exit")
 _mainMenu = NodePath("Menu/Menu Margin")
 _settingsMenu = NodePath("Menu/Settings Panel")
 _volumeSlider = NodePath("Menu/Settings Panel/Margin/VBox/Volume/Slider")
+_leaderboardLabel = NodePath("Menu/Menu Margin/Menu VBox/Leaderboard")
 
 [node name="Freepik Credit" type="Label" parent="."]
 layout_mode = 1
@@ -76,6 +77,12 @@ text = "Settings"
 [node name="Exit" type="Button" parent="Menu/Menu Margin/Menu VBox"]
 layout_mode = 2
 text = "Exit"
+
+[node name="Leaderboard" type="RichTextLabel" parent="Menu/Menu Margin/Menu VBox"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Loaderboard loading...[/center]"
+fit_content = true
 
 [node name="Settings Panel" type="PanelContainer" parent="Menu"]
 visible = false

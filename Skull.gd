@@ -58,8 +58,8 @@ func take_damage(amount):
 	health -= amount
 	$HealthBar.update_health_bar()
 	if health <= 0:
+		player.kill()
 		queue_free()
-		player.score += 1
 
 func get_save_data():
 	return {

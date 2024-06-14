@@ -47,6 +47,9 @@ func autosave_now():
 	save_file.store_string(JSON.stringify(save_data))
 	save_file.close()
 
+func delete_autosave():
+	DirAccess.remove_absolute(_save_location + SAVE_FILE)
+
 func save_score(new_score: int):
 	var score_comparator = func(a, b):
 		return a["score"] < b["score"]

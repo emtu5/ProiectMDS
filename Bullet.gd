@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-var speed = 200
 const DAMAGE = 5
+
+var speed = 200
 var sender
 # Functie pentru a ma folosi de ea in enemy ca sa iau numele( e doar peticeala, trebuie sa gasesc o metoda umana data viitoare)
 func name():

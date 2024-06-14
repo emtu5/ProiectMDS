@@ -7,4 +7,4 @@ func add_tilemap(tilemap):
 
 func update_camera(position):
 	subviewport.get_node("Camera2D").position = position
-	
+

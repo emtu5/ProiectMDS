@@ -1,9 +1,10 @@
 extends Node2D
 
+const MAX_ENEMIES = 10
+
 var skeleton_scene = preload("res://Skeleton.tscn")
 var skull_scene = preload("res://Skull.tscn")
 var spawn = true
-const MAX_ENEMIES = 10
 var enemies = [] # Array to keep track of spawned enemies
 
 var spawn_area

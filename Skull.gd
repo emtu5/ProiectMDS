@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
-const bulletPath = preload('res://Bullet.tscn')
-var player
+const BULLET_PATH = preload('res://Bullet.tscn')
+const OFFSET = Vector2(15, 0)
 const MAX_HEALTH : float = 25.0
+const BULLET_SPEED = 200.0
+
+var player
 var health : float = MAX_HEALTH
 var shooting = false
-const OFFSET = Vector2(15, 0)
 var shoot_timer = 0
 var shoot_interval = 1.5
-const BULLET_SPEED = 200.0
 
 func _ready():
 	player = get_node("../../Player")
@@ -19,7 +20,7 @@ func _physics_process(delta):
 	var direction = player.global_position
 	var angle_to_player = atan2(direction.y - global_position.y, direction.x - global_position.x)
 	var rotation_degrees = rad_to_deg(angle_to_player)
-	
+
 	# Flip sprite based on player's position
 	if direction.x - global_position.x < 0:
 		get_node("AnimatedSprite2D").flip_h = true
@@ -31,7 +32,7 @@ func _physics_process(delta):
 		shoot_timer = 0
 
 func shoot(angle_to_player):
-	var bullet = bulletPath.instantiate()
+	var bullet = BULLET_PATH.instantiate()
 	var rotated_offset = OFFSET.rotated(angle_to_player)  # Rotate using radians
 	bullet.position = position + rotated_offset  # Adjust bullet position using position instead of global_position
 	print(bullet.position)

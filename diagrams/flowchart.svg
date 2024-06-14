@@ -1,0 +1,297 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1498pt" height="894pt" viewBox="0.00 0.00 1498.00 894.00">
+<g id="graph0" class="graph" transform="translate(4,890) scale(1)" data-name="Flowchart">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-890 1494,-890 1494,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="cluster_early_init">
+
+<polygon fill="none" stroke="lightgrey" points="552,-705.8 552,-878 862,-878 862,-705.8 552,-705.8" style=""/>
+<text text-anchor="middle" x="707" y="-861.4" font-family="Times,serif" font-size="14.00" style="">Early Initialization</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_options">
+
+<polygon fill="none" stroke="lightgrey" points="1082,-483 1082,-878 1482,-878 1482,-483 1082,-483" style=""/>
+<text text-anchor="middle" x="1282" y="-861.4" font-family="Times,serif" font-size="14.00" style="">Options Menu</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_main_menu">
+
+<polygon fill="none" stroke="lightgrey" points="524,-315.6 524,-671 911,-671 911,-315.6 524,-315.6" style=""/>
+<text text-anchor="middle" x="717.5" y="-654.4" font-family="Times,serif" font-size="14.00" style="">Main Menu</text>
+</g>
+<g id="clust4" class="cluster" data-name="cluster_gameplay">
+
+<polygon fill="none" stroke="blue" points="8,-65 8,-294.6 919,-294.6 919,-65 8,-65" style=""/>
+</g>
+<!-- start -->
+<g id="node1" class="node" pointer-events="visible" data-name="start">
+
+<ellipse fill="none" stroke="black" cx="707" cy="-827.2" rx="55" ry="18" style=""/>
+<text text-anchor="middle" x="707" y="-823" font-family="Times,serif" font-size="14.00" style="">Game Start</text>
+</g>
+<!-- menu_init -->
+<g id="node2" class="node" pointer-events="visible" data-name="menu_init">
+
+<polygon fill="none" stroke="black" points="854.26,-772.4 559.74,-772.4 559.74,-713.6 854.26,-713.6 854.26,-772.4" style=""/>
+<text text-anchor="middle" x="707" y="-755.6" font-family="Times,serif" font-size="14.00" style="">Menu scene is loaded.</text>
+<text text-anchor="middle" x="707" y="-738.8" font-family="Times,serif" font-size="14.00" style="">Leaderboard is loaded from disk.</text>
+<text text-anchor="middle" x="707" y="-722" font-family="Times,serif" font-size="14.00" style="">Check if the Load Save button should be enabled.</text>
+</g>
+<!-- start&#45;&gt;menu_init -->
+<g id="edge1" class="edge" data-name="start-&gt;menu_init">
+
+<path fill="none" stroke="black" d="M707,-808.77C707,-801.49 707,-792.72 707,-784.01" style=""/>
+<polygon fill="black" stroke="black" points="710.5,-784.24 707,-774.24 703.5,-784.24 710.5,-784.24" style=""/>
+</g>
+<!-- menu_show -->
+<g id="node4" class="node" pointer-events="visible" data-name="menu_show">
+
+<polygon fill="none" stroke="black" points="854.1,-638.2 579.9,-638.2 579.9,-602.2 854.1,-602.2 854.1,-638.2" style=""/>
+<text text-anchor="middle" x="717" y="-616" font-family="Times,serif" font-size="14.00" style="">Main Menu is shown, options panel is hidden.</text>
+</g>
+<!-- menu_init&#45;&gt;menu_show -->
+<g id="edge2" class="edge" data-name="menu_init-&gt;menu_show">
+
+<path fill="none" stroke="black" d="M709.37,-713.37C710.96,-694.17 713.05,-668.97 714.63,-649.77" style=""/>
+<polygon fill="black" stroke="black" points="718.11,-650.19 715.45,-639.93 711.14,-649.61 718.11,-650.19" style=""/>
+</g>
+<!-- end -->
+<g id="node3" class="node" pointer-events="visible" data-name="end">
+
+<polygon fill="none" stroke="black" points="833.6,-36 748.4,-36 748.4,0 833.6,0 833.6,-36" style=""/>
+<text text-anchor="middle" x="791" y="-13.8" font-family="Times,serif" font-size="14.00" style="">Exit Process</text>
+</g>
+<!-- main_menu -->
+<g id="node9" class="node" pointer-events="visible" data-name="main_menu">
+
+<ellipse fill="none" stroke="black" cx="773" cy="-520.2" rx="56.23" ry="18" style=""/>
+<text text-anchor="middle" x="773" y="-516" font-family="Times,serif" font-size="14.00" style="">Main Menu</text>
+</g>
+<!-- menu_show&#45;&gt;main_menu -->
+<g id="edge9" class="edge" data-name="menu_show-&gt;main_menu">
+
+<path fill="none" stroke="black" d="M726.75,-602.13C735.29,-587.19 747.84,-565.22 757.72,-547.95" style=""/>
+<polygon fill="black" stroke="black" points="760.5,-550.14 762.42,-539.72 754.42,-546.66 760.5,-550.14" style=""/>
+</g>
+<!-- options_show -->
+<g id="node5" class="node" pointer-events="visible" data-name="options_show">
+
+<polygon fill="none" stroke="black" points="1375.43,-845.2 1098.57,-845.2 1098.57,-809.2 1375.43,-809.2 1375.43,-845.2" style=""/>
+<text text-anchor="middle" x="1237" y="-823" font-family="Times,serif" font-size="14.00" style="">Options Menu is shown, main menu is hidden.</text>
+</g>
+<!-- options -->
+<g id="node6" class="node" pointer-events="visible" data-name="options">
+
+<ellipse fill="none" stroke="black" cx="1247" cy="-743" rx="66.63" ry="18" style=""/>
+<text text-anchor="middle" x="1247" y="-738.8" font-family="Times,serif" font-size="14.00" style="">Options Menu</text>
+</g>
+<!-- options_show&#45;&gt;options -->
+<g id="edge3" class="edge" data-name="options_show-&gt;options">
+
+<path fill="none" stroke="black" d="M1239.12,-808.77C1240.39,-798.31 1242.04,-784.74 1243.51,-772.73" style=""/>
+<polygon fill="black" stroke="black" points="1246.97,-773.26 1244.7,-762.91 1240.02,-772.41 1246.97,-773.26" style=""/>
+</g>
+<!-- options&#45;&gt;menu_show -->
+<g id="edge14" class="edge" data-name="options-&gt;menu_show">
+
+<path fill="none" stroke="black" d="M1195.38,-731.36C1158.28,-723.14 1107.32,-710.67 1063.67,-695.8 1045.93,-689.76 1042.91,-684.5 1025,-679 970.86,-662.39 909.82,-649.73 856.45,-640.56" style=""/>
+<polygon fill="black" stroke="black" points="857.12,-637.12 846.67,-638.9 855.95,-644.02 857.12,-637.12" style=""/>
+<text text-anchor="middle" x="1151.67" y="-683.2" font-family="Times,serif" font-size="14.00" style="">Close Options button is pressed</text>
+</g>
+<!-- options&#45;&gt;options -->
+<g id="edge4" class="edge" data-name="options-&gt;options">
+
+<path fill="none" stroke="black" d="M1305.88,-751.82C1320.58,-751.2 1331.56,-748.26 1331.56,-743 1331.56,-739.22 1325.89,-736.63 1317.24,-735.25" style=""/>
+<polygon fill="black" stroke="black" points="1317.68,-731.78 1307.39,-734.32 1317.02,-738.75 1317.68,-731.78" style=""/>
+<text text-anchor="middle" x="1385.61" y="-738.8" font-family="Times,serif" font-size="14.00" style="">Volume is adjusted</text>
+</g>
+<!-- confirm_delete -->
+<g id="node8" class="node" pointer-events="visible" data-name="confirm_delete">
+
+<polygon fill="none" stroke="black" points="1272,-638.2 1090.08,-620.2 1272,-602.2 1453.92,-620.2 1272,-638.2" style=""/>
+<text text-anchor="middle" x="1272" y="-616" font-family="Times,serif" font-size="14.00" style="">Was the button pressed twice?</text>
+</g>
+<!-- options&#45;&gt;confirm_delete -->
+<g id="edge5" class="edge" data-name="options-&gt;confirm_delete">
+
+<path fill="none" stroke="black" d="M1245.54,-724.7C1244.87,-711.93 1244.83,-694.21 1247.99,-679 1250.2,-668.33 1254.37,-657.15 1258.61,-647.5" style=""/>
+<polygon fill="black" stroke="black" points="1261.65,-649.28 1262.7,-638.73 1255.3,-646.32 1261.65,-649.28" style=""/>
+<text text-anchor="middle" x="1337.01" y="-683.2" font-family="Times,serif" font-size="14.00" style="">Erase All Data button is pressed</text>
+</g>
+<!-- erase_data -->
+<g id="node7" class="node" pointer-events="visible" data-name="erase_data">
+
+<polygon fill="none" stroke="black" points="1422.85,-549.6 1223.15,-549.6 1223.15,-490.8 1422.85,-490.8 1422.85,-549.6" style=""/>
+<text text-anchor="middle" x="1323" y="-532.8" font-family="Times,serif" font-size="14.00" style="">Delete save file and leaderboard.</text>
+<text text-anchor="middle" x="1323" y="-516" font-family="Times,serif" font-size="14.00" style="">Disable Load Save button.</text>
+<text text-anchor="middle" x="1323" y="-499.2" font-family="Times,serif" font-size="14.00" style="">Reset loaded leaderboard.</text>
+</g>
+<!-- erase_data&#45;&gt;options -->
+<g id="edge8" class="edge" data-name="erase_data-&gt;options">
+
+<path fill="none" stroke="black" d="M1404.39,-549.99C1427.43,-562.34 1449.81,-579.33 1463,-602.2 1478.28,-628.69 1467.75,-640.79 1463,-671 1461.2,-682.44 1463.56,-688 1455,-695.8 1435.13,-713.9 1370.78,-726.34 1318.86,-733.71" style=""/>
+<polygon fill="black" stroke="black" points="1318.58,-730.22 1309.15,-735.05 1319.54,-737.15 1318.58,-730.22" style=""/>
+</g>
+<!-- confirm_delete&#45;&gt;options -->
+<g id="edge6" class="edge" data-name="confirm_delete-&gt;options">
+
+<path fill="none" stroke="black" d="M1347.22,-631.25C1399.43,-641.46 1455.12,-660.89 1428,-695.8 1414.24,-713.51 1362.54,-725.57 1317.89,-732.91" style=""/>
+<polygon fill="black" stroke="black" points="1317.55,-729.42 1308.22,-734.44 1318.64,-736.34 1317.55,-729.42" style=""/>
+<text text-anchor="middle" x="1442.56" y="-683.2" font-family="Times,serif" font-size="14.00" style="">No</text>
+</g>
+<!-- confirm_delete&#45;&gt;erase_data -->
+<g id="edge7" class="edge" data-name="confirm_delete-&gt;erase_data">
+
+<path fill="none" stroke="black" d="M1280.65,-602.58C1286.75,-590.86 1295.17,-574.68 1302.9,-559.83" style=""/>
+<polygon fill="black" stroke="black" points="1305.89,-561.66 1307.4,-551.18 1299.68,-558.43 1305.89,-561.66" style=""/>
+<text text-anchor="middle" x="1307.89" y="-571.6" font-family="Times,serif" font-size="14.00" style="">Yes</text>
+</g>
+<!-- main_menu&#45;&gt;end -->
+<g id="edge16" class="edge" data-name="main_menu-&gt;end">
+
+<path fill="none" stroke="black" d="M823.21,-511.59C873.98,-500.72 945,-475.34 945,-418.4 945,-418.4 945,-418.4 945,-90 945,-44.77 889.54,-28.26 845.18,-22.28" style=""/>
+<polygon fill="black" stroke="black" points="845.74,-18.82 835.4,-21.13 844.92,-25.78 845.74,-18.82" style=""/>
+<text text-anchor="middle" x="1005.47" y="-264.4" font-family="Times,serif" font-size="14.00" style="">Exit button is pressed</text>
+</g>
+<!-- main_menu&#45;&gt;options_show -->
+<g id="edge15" class="edge" data-name="main_menu-&gt;options_show">
+
+<path fill="none" stroke="black" d="M797.85,-536.59C818.74,-550.91 847.57,-574.22 863,-602.2 883.38,-639.16 852.01,-663.4 879.06,-695.8 930.57,-757.49 1013.82,-790 1087.08,-807.12" style=""/>
+<polygon fill="black" stroke="black" points="1086.28,-810.53 1096.8,-809.31 1087.81,-803.7 1086.28,-810.53" style=""/>
+<text text-anchor="middle" x="949.97" y="-683.2" font-family="Times,serif" font-size="14.00" style="">Options button is pressed</text>
+</g>
+<!-- load_default_scene -->
+<g id="node10" class="node" pointer-events="visible" data-name="load_default_scene">
+
+<polygon fill="none" stroke="black" points="657.72,-435.4 532.28,-435.4 532.28,-399.4 657.72,-399.4 657.72,-435.4" style=""/>
+<text text-anchor="middle" x="595" y="-413.2" font-family="Times,serif" font-size="14.00" style="">Load default scene.</text>
+</g>
+<!-- main_menu&#45;&gt;load_default_scene -->
+<g id="edge10" class="edge" data-name="main_menu-&gt;load_default_scene">
+
+<path fill="none" stroke="black" d="M746.35,-504.11C716.96,-487.46 669.33,-460.49 635.35,-441.25" style=""/>
+<polygon fill="black" stroke="black" points="637.46,-438.42 627.04,-436.54 634.01,-444.52 637.46,-438.42" style=""/>
+<text text-anchor="middle" x="703.22" y="-460.4" font-family="Times,serif" font-size="14.00" style="">Start</text>
+</g>
+<!-- load_saved_scene -->
+<g id="node11" class="node" pointer-events="visible" data-name="load_saved_scene">
+
+<polygon fill="none" stroke="black" points="902.96,-438 675.04,-438 675.04,-396.8 902.96,-396.8 902.96,-438" style=""/>
+<text text-anchor="middle" x="789" y="-421.6" font-family="Times,serif" font-size="14.00" style="">Load scene from saved resource path.</text>
+<text text-anchor="middle" x="789" y="-404.8" font-family="Times,serif" font-size="14.00" style="">Load saved state into scene.</text>
+</g>
+<!-- main_menu&#45;&gt;load_saved_scene -->
+<g id="edge11" class="edge" data-name="main_menu-&gt;load_saved_scene">
+
+<path fill="none" stroke="black" d="M775.71,-502.1C777.99,-487.77 781.3,-466.94 784.04,-449.64" style=""/>
+<polygon fill="black" stroke="black" points="787.48,-450.28 785.59,-439.85 780.57,-449.18 787.48,-450.28" style=""/>
+<text text-anchor="middle" x="847.12" y="-460.4" font-family="Times,serif" font-size="14.00" style="">Load Save, save exists.</text>
+</g>
+<!-- unload_menu -->
+<g id="node12" class="node" pointer-events="visible" data-name="unload_menu">
+
+<polygon fill="none" stroke="black" points="661.91,-359.6 532.09,-359.6 532.09,-323.6 661.91,-323.6 661.91,-359.6" style=""/>
+<text text-anchor="middle" x="597" y="-337.4" font-family="Times,serif" font-size="14.00" style="">Unload menu scene.</text>
+</g>
+<!-- load_default_scene&#45;&gt;unload_menu -->
+<g id="edge12" class="edge" data-name="load_default_scene-&gt;unload_menu">
+
+<path fill="none" stroke="black" d="M595.47,-398.91C595.7,-390.64 595.97,-380.55 596.22,-371.2" style=""/>
+<polygon fill="black" stroke="black" points="599.72,-371.57 596.49,-361.48 592.72,-371.38 599.72,-371.57" style=""/>
+</g>
+<!-- load_saved_scene&#45;&gt;unload_menu -->
+<g id="edge13" class="edge" data-name="load_saved_scene-&gt;unload_menu">
+
+<path fill="none" stroke="black" d="M736.79,-396.33C710.83,-386.35 679.43,-374.28 652.97,-364.11" style=""/>
+<polygon fill="black" stroke="black" points="654.35,-360.89 643.76,-360.57 651.84,-367.43 654.35,-360.89" style=""/>
+</g>
+<!-- gameplay -->
+<g id="node13" class="node" pointer-events="visible" data-name="gameplay">
+
+<ellipse fill="none" stroke="black" cx="432" cy="-268.6" rx="50.94" ry="18" style=""/>
+<text text-anchor="middle" x="432" y="-264.4" font-family="Times,serif" font-size="14.00" style="">Gameplay</text>
+</g>
+<!-- unload_menu&#45;&gt;gameplay -->
+<g id="edge17" class="edge" data-name="unload_menu-&gt;gameplay">
+
+<path fill="none" stroke="black" d="M556.64,-323.23C531.51,-312.42 499.25,-298.54 473.85,-287.61" style=""/>
+<polygon fill="black" stroke="black" points="475.38,-284.46 464.81,-283.72 472.62,-290.89 475.38,-284.46" style=""/>
+</g>
+<!-- autosave -->
+<g id="node14" class="node" pointer-events="visible" data-name="autosave">
+
+<polygon fill="none" stroke="black" points="246.11,-197.8 15.89,-197.8 15.89,-161.8 246.11,-161.8 246.11,-197.8" style=""/>
+<text text-anchor="middle" x="131" y="-175.6" font-family="Times,serif" font-size="14.00" style="">Save game state to disk automatically.</text>
+</g>
+<!-- gameplay&#45;&gt;autosave -->
+<g id="edge18" class="edge" data-name="gameplay-&gt;autosave">
+
+<path fill="none" stroke="black" d="M382.75,-263.58C340.79,-259.11 279.35,-250.09 228.24,-232.6 207.36,-225.45 185.56,-214.23 167.9,-204.05" style=""/>
+<polygon fill="black" stroke="black" points="169.71,-201.06 159.32,-198.99 166.15,-207.09 169.71,-201.06" style=""/>
+<text text-anchor="middle" x="274.88" y="-220" font-family="Times,serif" font-size="14.00" style="">A second passes</text>
+</g>
+<!-- pause -->
+<g id="node15" class="node" pointer-events="visible" data-name="pause">
+
+<ellipse fill="none" stroke="black" cx="459" cy="-179.8" rx="194.48" ry="18" style=""/>
+<text text-anchor="middle" x="459" y="-175.6" font-family="Times,serif" font-size="14.00" style="">Pause Menu is shown, gameplay speed set to 0.</text>
+</g>
+<!-- gameplay&#45;&gt;pause -->
+<g id="edge20" class="edge" data-name="gameplay-&gt;pause">
+
+<path fill="none" stroke="black" d="M451.2,-251.61C456.35,-246.17 461.26,-239.66 464,-232.6 466.82,-225.33 467.17,-217.07 466.4,-209.32" style=""/>
+<polygon fill="black" stroke="black" points="469.88,-208.92 464.78,-199.63 462.97,-210.07 469.88,-208.92" style=""/>
+<text text-anchor="middle" x="483.33" y="-220" font-family="Times,serif" font-size="14.00" style="">Pause</text>
+</g>
+<!-- save_score -->
+<g id="node17" class="node" pointer-events="visible" data-name="save_score">
+
+<ellipse fill="none" stroke="black" cx="791" cy="-179.8" rx="119.82" ry="18" style=""/>
+<text text-anchor="middle" x="791" y="-175.6" font-family="Times,serif" font-size="14.00" style="">Update leaderboard on disk.</text>
+</g>
+<!-- gameplay&#45;&gt;save_score -->
+<g id="edge23" class="edge" data-name="gameplay-&gt;save_score">
+
+<path fill="none" stroke="black" d="M473.18,-257.64C533.01,-243.18 644.84,-216.14 718.62,-198.3" style=""/>
+<polygon fill="black" stroke="black" points="719.3,-201.74 728.19,-195.99 717.65,-194.93 719.3,-201.74" style=""/>
+<text text-anchor="middle" x="676.46" y="-220" font-family="Times,serif" font-size="14.00" style="">Game Over</text>
+</g>
+<!-- autosave&#45;&gt;gameplay -->
+<g id="edge19" class="edge" data-name="autosave-&gt;gameplay">
+
+<path fill="none" stroke="black" d="M246.57,-197.46C271.1,-202.31 296.63,-208.36 320,-215.8 345.96,-224.06 373.77,-236.9 395.19,-247.73" style=""/>
+<polygon fill="black" stroke="black" points="393.31,-250.7 403.8,-252.16 396.51,-244.48 393.31,-250.7" style=""/>
+</g>
+<!-- pause&#45;&gt;gameplay -->
+<g id="edge21" class="edge" data-name="pause-&gt;gameplay">
+
+<path fill="none" stroke="black" d="M429.49,-198.07C423.6,-203 418.21,-208.93 414.9,-215.8 411.12,-223.63 412.24,-232.5 415.25,-240.66" style=""/>
+<polygon fill="black" stroke="black" points="411.96,-241.9 419.38,-249.47 418.3,-238.93 411.96,-241.9" style=""/>
+<text text-anchor="middle" x="437.55" y="-220" font-family="Times,serif" font-size="14.00" style="">Resume</text>
+</g>
+<!-- final_save -->
+<g id="node16" class="node" pointer-events="visible" data-name="final_save">
+
+<ellipse fill="none" stroke="black" cx="559" cy="-91" rx="104.2" ry="18" style=""/>
+<text text-anchor="middle" x="559" y="-86.8" font-family="Times,serif" font-size="14.00" style="">Save game state to disk.</text>
+</g>
+<!-- pause&#45;&gt;final_save -->
+<g id="edge22" class="edge" data-name="pause-&gt;final_save">
+
+<path fill="none" stroke="black" d="M478.76,-161.65C493.69,-148.69 514.38,-130.73 531.01,-116.3" style=""/>
+<polygon fill="black" stroke="black" points="532.88,-119.3 538.14,-110.11 528.3,-114.02 532.88,-119.3" style=""/>
+<text text-anchor="middle" x="530.44" y="-131.2" font-family="Times,serif" font-size="14.00" style="">Quit</text>
+</g>
+<!-- final_save&#45;&gt;end -->
+<g id="edge25" class="edge" data-name="final_save-&gt;end">
+
+<path fill="none" stroke="black" d="M608.77,-74.77C646.62,-63.19 698.61,-47.27 737.38,-35.41" style=""/>
+<polygon fill="black" stroke="black" points="737.96,-38.89 746.49,-32.62 735.91,-32.2 737.96,-38.89" style=""/>
+</g>
+<!-- save_score&#45;&gt;end -->
+<g id="edge24" class="edge" data-name="save_score-&gt;end">
+
+<path fill="none" stroke="black" d="M791,-161.39C791,-134.02 791,-80.62 791,-47.56" style=""/>
+<polygon fill="black" stroke="black" points="794.5,-47.9 791,-37.9 787.5,-47.9 794.5,-47.9" style=""/>
+</g>
+</g>
+</svg>

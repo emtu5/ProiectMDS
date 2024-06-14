@@ -81,6 +81,7 @@ func _delete_all_data():
 		Persistence.delete_autosave()
 		Persistence.delete_scores()
 		delete_data.text = _init_delete_label
+		load_save.disabled = true
 		_format_leaderboard()
 		_confirming_delete = false
 

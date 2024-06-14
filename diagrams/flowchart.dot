@@ -1,0 +1,64 @@
+digraph Flowchart {
+    compound=true;
+    subgraph cluster_early_init {
+        color = lightgrey;
+        label = "Early Initialization";
+
+        start [label="Game Start"];
+        start -> menu_init;
+        menu_init [label="Menu scene is loaded.\nLeaderboard is loaded from disk.\nCheck if the Load Save button should be enabled.", shape="rectangle"];
+    }
+    end [label="Exit Process", shape="rectangle"];
+    menu_init -> menu_show;
+    subgraph cluster_options {
+        color=lightgrey;
+        label = "Options Menu";
+        
+        options_show [label="Options Menu is shown, main menu is hidden.", shape="rectangle"];
+        options_show -> options;
+        options [label="Options Menu"];
+        erase_data [label="Erase Data button is pressed", shape="diamond"];
+        options -> options [label="Volume is adjusted"];
+        options -> confirm_delete [label="Erase All Data button is pressed"];
+        confirm_delete [label="Was the button pressed twice?", shape="diamond"];
+        confirm_delete -> options [label="No"];
+        confirm_delete -> erase_data [label="Yes"];
+        erase_data [label="Delete save file and leaderboard.\nDisable Load Save button.\nReset loaded leaderboard.", shape="rectangle"];
+        erase_data -> options;
+    }
+    subgraph cluster_main_menu {
+        color=lightgrey;
+        label = "Main Menu";
+
+        menu_show [label="Main Menu is shown, options panel is hidden.", shape="rectangle"];
+        menu_show -> main_menu;
+        main_menu [label="Main Menu"];
+        main_menu -> load_default_scene [label="Start"];
+        main_menu -> load_saved_scene [label="Load Save, save exists."]
+        load_default_scene [label="Load default scene.", shape="rectangle"];
+        load_saved_scene [label="Load scene from saved resource path.\nLoad saved state into scene.", shape="rectangle"];
+        unload_menu [label="Unload menu scene.", shape="rectangle"];
+        load_default_scene -> unload_menu;
+        load_saved_scene -> unload_menu;
+    }
+    options -> menu_show [label="Close Options button is pressed"];
+    main_menu -> options_show [label="Options button is pressed"];
+    main_menu -> end [label="Exit button is pressed"];
+    unload_menu -> gameplay;
+    subgraph cluster_gameplay {
+        color=blue;
+        gameplay [label="Gameplay"];
+        gameplay -> autosave [label="A second passes"];
+        autosave [label="Save game state to disk automatically.", shape="rectangle"];
+        autosave -> gameplay;
+        gameplay -> pause [label="Pause"];
+        pause [label="Pause Menu is shown, gameplay speed set to 0."];
+        pause -> gameplay [label="Resume"];
+        pause -> final_save [label="Quit"]
+        final_save [label="Save game state to disk."]
+        gameplay -> save_score [label="Game Over"];
+        save_score [label="Update leaderboard on disk."]
+    }
+    save_score -> end;
+    final_save -> end;
+}

@@ -38,7 +38,7 @@ radius = 82.0
 radius = 7.0
 height = 16.0
 
-[node name="Skeleton" type="CharacterBody2D"]
+[node name="Skeleton" type="CharacterBody2D" groups=["Save"]]
 script = ExtResource("1_x5ymj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

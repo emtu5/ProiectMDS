@@ -17,6 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 	shoot_timer += delta
+	# get direction and compute the angle to player and rotation degrees for shooting direction
 	var direction = player.global_position
 	var angle_to_player = atan2(direction.y - global_position.y, direction.x - global_position.x)
 	var rotation_degrees = rad_to_deg(angle_to_player)
@@ -41,11 +42,13 @@ func shoot(angle_to_player):
 	bullet.sender = "Skull"
 	get_parent().add_child(bullet)
 
+# if in shooting range
 func _on_player_detection_body_entered(body):
 	if body.has_method("name"):
 		if body.name() == "Player":
 			shooting = true
 
+# when player exits the shooting range
 func _on_player_detection_body_exited(body):
 	if body.has_method("name"):
 		if body.name() == "Player":

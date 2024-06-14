@@ -129,6 +129,7 @@ func _physics_process(_delta):
 func get_save_data():
 	return {
 		"score": score,
+		"coins": coins,
 		"hp": hp,
 		"x": position.x,
 		"y": position.y,
@@ -136,6 +137,7 @@ func get_save_data():
 
 func load_save_data(data):
 	score = data["score"]
+	coins = data["coins"]
 	hp = data["hp"]
 	position.x = data["x"]
 	position.y = data["y"]

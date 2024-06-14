@@ -74,7 +74,7 @@ func healed():
 
 func _process(_delta):
 
-	 ## $TimeRemaining.text = "%s" % roundf($BulletTimer.time_left) -- ref for spells timers
+	## $TimeRemaining.text = "%s" % roundf($BulletTimer.time_left) -- ref for spells timers
 	_animated_sprite.play("Idle")
 	#pause_menu.hide()
 	if paused == false:

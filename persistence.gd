@@ -19,13 +19,6 @@ func _process(delta):
 		return
 	_time_since_autosave = 0.0
 
-	if is_instance_valid(_scene_to_autosave) == false:
-		_scene_to_autosave = null
-		_scene_save_nodes = []
-
-	if _scene_to_autosave == null:
-		return
-
 	autosave_now()
 
 func _notification(what: int):
@@ -34,6 +27,13 @@ func _notification(what: int):
 		get_tree().quit()
 
 func autosave_now():
+	if is_instance_valid(_scene_to_autosave) == false:
+		_scene_to_autosave = null
+		_scene_save_nodes = []
+
+	if _scene_to_autosave == null:
+		return
+
 	var nodes_json = {}
 	for node in _scene_save_nodes:
 		if not is_instance_valid(node):

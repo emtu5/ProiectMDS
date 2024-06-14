@@ -17,6 +17,9 @@ var _confirming_delete : bool = false
 
 var _prev_scale_factor : float
 
+var _menu_music = preload("res://Art/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3")
+var _player
+
 func _ready():
 	_prev_scale_factor = get_tree().root.content_scale_factor
 	get_tree().root.content_scale_factor = 1
@@ -29,6 +32,10 @@ func _ready():
 	exit.pressed.connect(_exit_button)
 	volume_slider.drag_ended.connect(_volume_drag_ended)
 	delete_data.pressed.connect(_delete_all_data)
+	_player = AudioStreamPlayer.new()
+	_player.stream = _menu_music
+	add_child(_player)
+	_player.play()
 
 func _process(_delta):
 	pass

@@ -102,3 +102,9 @@ offset_left = -36.0
 offset_top = -32.0
 offset_right = -36.0
 offset_bottom = -32.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = -128.0
+offset_top = -75.0
+offset_right = -90.0
+offset_bottom = -52.0

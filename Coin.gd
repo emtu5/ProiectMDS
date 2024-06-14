@@ -7,5 +7,5 @@ func _ready():
 func _on_collect_area_body_entered(body):
 	if body.has_method("name"):
 		if body.name() == "Player":
-			body.score += 1
+			body.coin()
 			queue_free()

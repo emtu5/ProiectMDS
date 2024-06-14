@@ -44,7 +44,7 @@ func take_damage(amount):
 	health -= amount
 	$HealthBar.update_health_bar()
 	if health <= 0:
-		player.score += 1
+		player.kill()
 		queue_free()
 
 

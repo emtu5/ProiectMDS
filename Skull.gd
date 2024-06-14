@@ -73,3 +73,4 @@ func load_save_data(data):
 	shoot_interval = data["interval"]
 	position.x = data["x"]
 	position.y = data["y"]
+	call_deferred("update_health_bar", $HealthBar)

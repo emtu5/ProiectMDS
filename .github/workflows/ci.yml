@@ -98,5 +98,8 @@ jobs:
                 files: |
                     ./LinuxX11/Proiect Mds.x86_64
                     ./Windows Desktop/Proiect Mds.exe
-                body: Release for tag ${{ github.ref }}
+                body: |
+                  Release for tag ${{ github.ref }}:
+
+                  ${{ github.event.head_commit.message }}
                 fail_on_unmatched_files: true

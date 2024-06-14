@@ -1,5 +1,9 @@
 # ProiectMDS
 
+Trello board: https://trello.com/b/ZhVZa6Ct
+
+Music credit: https://www.fesliyanstudios.com/royalty-free-music/downloads-c/8-bit-music/6
+
 ## User Stories
 
 - Ca jucător vreau să pot schimb setările jocului (rezoluție, volum).

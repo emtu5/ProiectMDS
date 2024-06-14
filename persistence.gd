@@ -52,7 +52,7 @@ func delete_autosave():
 
 func save_score(new_score: int):
 	var score_comparator = func(a, b):
-		return a["score"] < b["score"]
+		return a["score"] > b["score"]
 	var prev_leaderboard = score_load()
 	var new_entry = {"score": new_score, "time": Time.get_unix_time_from_system()}
 	prev_leaderboard.append(new_entry)

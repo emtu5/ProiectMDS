@@ -91,3 +91,15 @@ func _physics_process(_delta):
 		if velocity.y < 0:
 			velocity.y += 400
 	
+func get_save_data():
+	return {
+		"hp": hp,
+		"x": position.x,
+		"y": position.y
+	}
+
+func load_save_data(data):
+	hp = data["hp"]
+	position.x = data["x"]
+	position.y = data["y"]
+	set_hp_bar()

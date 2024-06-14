@@ -8,7 +8,7 @@ size = Vector2(186, 102)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4jlxv"]
 size = Vector2(54, 48)
 
-[node name="SkeletonSpawner" type="Node2D"]
+[node name="SkeletonSpawner" type="Node2D" groups=["Save"]]
 script = ExtResource("1_4158k")
 
 [node name="Timer" type="Timer" parent="."]

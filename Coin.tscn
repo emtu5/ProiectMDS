@@ -29,7 +29,7 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="Coin" type="Node2D"]
+[node name="Coin" type="Node2D" groups=["Save"]]
 script = ExtResource("1_iajy5")
 
 [node name="CollectArea" type="Area2D" parent="."]

@@ -50,3 +50,20 @@ func _on_enemy_tree_exited():
 		if not enemy.is_inside_tree():
 			enemies.erase(enemy)
 			break
+
+func get_save_data():
+	var save_data = []
+	for enemy in enemies:
+		save_data.append({
+			"path": enemy.scene_file_path,
+			"data": enemy.get_save_data()
+		})
+	return save_data
+
+func load_save_data(data):
+	for save_data in data:
+		var enemy = load(save_data["path"]).instantiate()
+		enemy.load_save_data(save_data["data"])
+		add_child(enemy)
+		enemies.append(enemy)
+		enemy.connect("tree_exited", Callable(self, "_on_enemy_tree_exited"))

@@ -55,7 +55,7 @@ animations = [{
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pm0ur"]
 bg_color = Color(0.129412, 0.666667, 0, 1)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Save"]]
 script = ExtResource("1_eoxqs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

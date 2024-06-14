@@ -20,6 +20,8 @@ func _ready():
 	set_score_label()
 ## Cand ajungi la 0 hp, te despawnezi (inchidem si jocul in acelasi timp)
 func unalive():
+	Persistence.delete_autosave()
+	Persistence.save_score(score)
 	get_tree().quit()
 ## Functie pentru pauza
 func pauseMenu():
@@ -126,3 +128,18 @@ func _physics_process(_delta):
 		move_and_slide()
 	
 	
+func get_save_data():
+	return {
+		"score": score,
+		"hp": hp,
+		"x": position.x,
+		"y": position.y,
+	}
+
+func load_save_data(data):
+	score = data["score"]
+	hp = data["hp"]
+	position.x = data["x"]
+	position.y = data["y"]
+	set_hp_bar()
+	set_hp_label()

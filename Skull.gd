@@ -56,3 +56,21 @@ func take_damage(amount):
 	if health <= 0:
 		queue_free()
 		player.score += 1
+
+func get_save_data():
+	return {
+		"health": health,
+		"timer": shoot_timer,
+		"interval": shoot_interval,
+		"x": position.x,
+		"y": position.y,
+		# no need for player or shooting, will be recalculated
+	}
+
+func load_save_data(data):
+	health = data["health"]
+	shoot_timer = data["timer"]
+	shoot_interval = data["interval"]
+	position.x = data["x"]
+	position.y = data["y"]
+	call_deferred("update_health_bar", $HealthBar)

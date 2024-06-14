@@ -65,3 +65,17 @@ func _on_damage_detection_body_exited(body):
 func _on_damage_timer_timeout():
 	if damage_target != null:
 		damage_target.damaged()
+
+func get_save_data():
+	return {
+		"health": health,
+		"x": position.x,
+		"y": position.y
+		# player and chase will be recalculated on save load
+	}
+
+func load_save_data(data):
+	health = data["health"]
+	position.x = data["x"]
+	position.y = data["y"]
+	call_deferred("update_health_bar", $HealthBar)

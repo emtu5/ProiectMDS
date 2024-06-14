@@ -143,4 +143,4 @@ func load_save_data(data):
 	position.x = data["x"]
 	position.y = data["y"]
 	set_hp_bar()
-	set_hp_label()
+	set_score_label()

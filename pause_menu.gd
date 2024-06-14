@@ -7,4 +7,5 @@ func _on_resume_pressed():
 
 
 func _on_quit_pressed():
+	Persistence.autosave_now()
 	get_tree().quit()

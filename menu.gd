@@ -1,6 +1,7 @@
 extends Node
 
 @export var _startScene : PackedScene;
+@export var _loadSave : Button;
 @export var _start : Button;
 @export var _settings : Button;
 @export var _closeSettings : Button;
@@ -14,6 +15,8 @@ var _prev_scale_factor : float
 func _ready():
 	_prev_scale_factor = get_tree().root.content_scale_factor
 	get_tree().root.content_scale_factor = 1
+	_loadSave.pressed.connect(_load_save_button)
+	_loadSave.disabled = not Persistence.can_load_autosave()
 	_start.pressed.connect(_start_button)
 	_settings.pressed.connect(_settings_button)
 	_closeSettings.pressed.connect(_close_settings_button);
@@ -22,6 +25,11 @@ func _ready():
 
 func _process(delta):
 	pass
+
+func _load_save_button():
+	get_tree().root.content_scale_factor = _prev_scale_factor
+	Persistence.load_autosave()
+	queue_free()
 
 func _start_button():
 	get_tree().root.content_scale_factor = _prev_scale_factor

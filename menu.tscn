@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://menu.gd" id="1_i0tb0"]
 [ext_resource type="PackedScene" uid="uid://bposhhcmx4wae" path="res://levels/Level1.tscn" id="2_qq05i"]
 
-[node name="Background" type="TextureRect" node_paths=PackedStringArray("_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider")]
+[node name="Background" type="TextureRect" node_paths=PackedStringArray("_loadSave", "_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,6 +14,7 @@ texture = ExtResource("1_dos8w")
 expand_mode = 2
 script = ExtResource("1_i0tb0")
 _startScene = ExtResource("2_qq05i")
+_loadSave = NodePath("Menu/Menu Margin/Menu VBox/Load Save")
 _start = NodePath("Menu/Menu Margin/Menu VBox/Start")
 _settings = NodePath("Menu/Menu Margin/Menu VBox/Settings")
 _closeSettings = NodePath("Menu/Settings Panel/Margin/VBox/Close Settings")
@@ -59,6 +60,10 @@ theme_override_constants/margin_bottom = 80
 [node name="Menu VBox" type="VBoxContainer" parent="Menu/Menu Margin"]
 layout_mode = 2
 alignment = 1
+
+[node name="Load Save" type="Button" parent="Menu/Menu Margin/Menu VBox"]
+layout_mode = 2
+text = "Load Save"
 
 [node name="Start" type="Button" parent="Menu/Menu Margin/Menu VBox"]
 layout_mode = 2

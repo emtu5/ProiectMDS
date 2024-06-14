@@ -10,6 +10,9 @@ var _save_location: String = "user://"
 const SAVE_FILE: String = "autosave.json"
 const SCORES_FILE: String = "scores.json"
 
+func _ready():
+	get_tree().set_auto_accept_quit(false)
+
 func _process(delta):
 	_time_since_autosave += delta * 1000.0
 	if _time_since_autosave < AUTOSAVE_INTERVAL_MSEC:
@@ -17,12 +20,10 @@ func _process(delta):
 	_time_since_autosave = 0.0
 
 	if is_instance_valid(_scene_to_autosave) == false:
-		print("Scene to autosave was unloaded")
 		_scene_to_autosave = null
 		_scene_save_nodes = []
 
 	if _scene_to_autosave == null:
-		print("No scene to autosave")
 		return
 
 	autosave_now()
@@ -30,6 +31,7 @@ func _process(delta):
 func _notification(what: int):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		autosave_now()
+		get_tree().quit()
 
 func autosave_now():
 	var nodes_json = {}
@@ -44,6 +46,31 @@ func autosave_now():
 	var save_file = FileAccess.open(_save_location + SAVE_FILE, FileAccess.WRITE)
 	save_file.store_string(JSON.stringify(save_data))
 	save_file.close()
+
+func save_score(new_score: int):
+	var score_comparator = func(a, b):
+		return a["score"] < b["score"]
+	var prev_leaderboard = score_load()
+	var new_entry = {"score": new_score, "time": Time.get_unix_time_from_system()}
+	prev_leaderboard.append(new_entry)
+	prev_leaderboard.sort_custom(score_comparator)
+	print("New leaderboard: " + str(prev_leaderboard))
+	var scores_file = FileAccess.open(_save_location + SCORES_FILE, FileAccess.WRITE)
+	scores_file.store_string(JSON.stringify(prev_leaderboard))
+	scores_file.close()
+
+func score_load() -> Array:
+	var scores_file = FileAccess.open(_save_location + SCORES_FILE, FileAccess.READ)
+	if scores_file == null:
+		return []
+	var scores_txt = scores_file.get_as_text()
+	scores_file.close()
+	var json = JSON.new()
+	var json_err = json.parse(scores_txt)
+	if json_err != OK:
+		print("Failed to parse scores file: " + str(json_err))
+		return []
+	return json.data
 
 func can_load_autosave() -> bool:
 	return FileAccess.file_exists(_save_location + SAVE_FILE)

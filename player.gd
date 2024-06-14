@@ -20,6 +20,7 @@ func _ready():
 	set_score_label()
 ## Cand ajungi la 0 hp, te despawnezi (inchidem si jocul in acelasi timp)
 func unalive():
+	Persistence.save_score(score)
 	get_tree().quit()
 ## Functie pentru pauza
 func pauseMenu():

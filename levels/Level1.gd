@@ -4,6 +4,8 @@ extends Node2D
 @onready var tilemap = $TileMap
 @onready var player = $Player
 
+var game_over_next_scene = "res://menu.tscn"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Persistence.register_scene_to_autosave(self)

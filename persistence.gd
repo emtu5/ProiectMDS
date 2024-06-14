@@ -54,13 +54,14 @@ func delete_autosave():
 func delete_scores():
 	DirAccess.remove_absolute(_save_location + SCORES_FILE)
 
+static func _score_comparator(a, b):
+	return a["score"] > b["score"]
+
 func save_score(new_score: int):
-	var score_comparator = func(a, b):
-		return a["score"] > b["score"]
 	var prev_leaderboard = score_load()
 	var new_entry = {"score": new_score, "time": Time.get_unix_time_from_system()}
 	prev_leaderboard.append(new_entry)
-	prev_leaderboard.sort_custom(score_comparator)
+	prev_leaderboard.sort_custom(_score_comparator)
 	print("New leaderboard: " + str(prev_leaderboard))
 	var scores_file = FileAccess.open(_save_location + SCORES_FILE, FileAccess.WRITE)
 	scores_file.store_string(JSON.stringify(prev_leaderboard))

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://menu.gd" id="1_i0tb0"]
 [ext_resource type="PackedScene" uid="uid://bposhhcmx4wae" path="res://levels/Level1.tscn" id="2_qq05i"]
 
-[node name="Background" type="TextureRect" node_paths=PackedStringArray("_loadSave", "_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider", "_leaderboardLabel")]
+[node name="Background" type="TextureRect" node_paths=PackedStringArray("_loadSave", "_start", "_settings", "_closeSettings", "_exit", "_mainMenu", "_settingsMenu", "_volumeSlider", "_leaderboardLabel", "_deleteData")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,6 +23,7 @@ _mainMenu = NodePath("Menu/Menu Margin")
 _settingsMenu = NodePath("Menu/Settings Panel")
 _volumeSlider = NodePath("Menu/Settings Panel/Margin/VBox/Volume/Slider")
 _leaderboardLabel = NodePath("Menu/Menu Margin/Menu VBox/Leaderboard")
+_deleteData = NodePath("Menu/Settings Panel/Margin/VBox/Delete All Data")
 
 [node name="Freepik Credit" type="Label" parent="."]
 layout_mode = 1
@@ -116,3 +117,7 @@ layout_mode = 2
 [node name="Close Settings" type="Button" parent="Menu/Settings Panel/Margin/VBox"]
 layout_mode = 2
 text = "Close Options"
+
+[node name="Delete All Data" type="Button" parent="Menu/Settings Panel/Margin/VBox"]
+layout_mode = 2
+text = "DELETE ALL DATA"

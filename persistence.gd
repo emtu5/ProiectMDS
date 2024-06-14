@@ -50,6 +50,9 @@ func autosave_now():
 func delete_autosave():
 	DirAccess.remove_absolute(_save_location + SAVE_FILE)
 
+func delete_scores():
+	DirAccess.remove_absolute(_save_location + SCORES_FILE)
+
 func save_score(new_score: int):
 	var score_comparator = func(a, b):
 		return a["score"] > b["score"]

@@ -10,6 +10,10 @@ extends Node
 @export var _settingsMenu : Node;
 @export var _volumeSlider : Slider;
 @export var _leaderboardLabel : RichTextLabel;
+@export var _deleteData : Button;
+
+var _init_delete_label : String
+var _confirming_delete : bool = false
 
 var _prev_scale_factor : float
 
@@ -24,6 +28,7 @@ func _ready():
 	_format_leaderboard()
 	_exit.pressed.connect(_exit_button)
 	_volumeSlider.drag_ended.connect(_volume_drag_ended)
+	_deleteData.pressed.connect(_delete_all_data)
 
 func _process(delta):
 	pass
@@ -66,6 +71,18 @@ func _format_leaderboard():
 			text += "N/A\n"
 	text += "[/center]"
 	_leaderboardLabel.bbcode_text = text
+
+func _delete_all_data():
+	if not _confirming_delete:
+		_init_delete_label = _deleteData.text
+		_deleteData.text = "Are you sure? Save data and leaderboard will be lost."
+		_confirming_delete = true
+	else:
+		Persistence.delete_autosave()
+		Persistence.delete_scores()
+		_deleteData.text = _init_delete_label
+		_format_leaderboard()
+		_confirming_delete = false
 
 func _exit_button():
 	get_tree().quit()

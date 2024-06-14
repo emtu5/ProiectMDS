@@ -10,11 +10,13 @@ var enemies = [] # Array to keep track of spawned enemies
 var spawn_area
 var restricted_area
 
+# start timer + get areas where the enemy can spawn and where not
 func _ready():
 	$Timer.start()
 	spawn_area = $SpawnArea/Spawn
 	restricted_area = $RestrictedArea/NoSpawn
 
+# create an enemy once per timer and max enemies is not surpassed
 func _on_timer_timeout():
 	if enemies.size() < MAX_ENEMIES:
 		var spawn_position = get_valid_spawn_position()
@@ -30,6 +32,7 @@ func _on_timer_timeout():
 			enemies.append(enemy)
 			enemy.connect("tree_exited", Callable(self, "_on_enemy_tree_exited"))
 
+# get random position for spwan withing the ranges
 func get_valid_spawn_position():
 	for i in range(100): # Try up to 100 times to find a valid position
 		var x = randi() % int(spawn_area.shape.extents.x * 2) - spawn_area.shape.extents.x + spawn_area.position.x
@@ -39,6 +42,7 @@ func get_valid_spawn_position():
 			return potential_position
 	return null # Return null if no valid position is found after 100 attempts
 
+# check if in no spawn area
 func is_in_restricted_area(pos):
 	var restricted_rect = restricted_area.shape.extents * 2
 	var restricted_position_offset = restricted_area.global_position - restricted_area.shape.extents

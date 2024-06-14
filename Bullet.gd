@@ -20,6 +20,7 @@ func _physics_process(delta):
 
 
 func _on_damage_area_body_entered(body):
+	# if the sender is not skull, behave differently
 	if sender != "Skull":
 		if body.has_method("take_damage"):
 			body.take_damage(DAMAGE)

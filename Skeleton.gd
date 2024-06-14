@@ -24,14 +24,14 @@ func _physics_process(_delta):
 		get_node("AnimatedSprite2D").flip_h = true
 	elif velocity.x > 0:
 		get_node("AnimatedSprite2D").flip_h = false
-	
+
 	move_and_slide()
 
 func _on_player_detection_body_entered(body):
 	if body.has_method("name"):
 		if body.name() == "Player":
 			chase = true
-	
+
 
 
 func _on_player_detection_body_exited(body):

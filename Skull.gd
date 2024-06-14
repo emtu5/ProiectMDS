@@ -19,7 +19,7 @@ func _physics_process(delta):
 	var direction = player.global_position
 	var angle_to_player = atan2(direction.y - global_position.y, direction.x - global_position.x)
 	var rotation_degrees = rad_to_deg(angle_to_player)
-	
+
 	# Flip sprite based on player's position
 	if direction.x - global_position.x < 0:
 		get_node("AnimatedSprite2D").flip_h = true

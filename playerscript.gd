@@ -28,25 +28,25 @@ var max_speed : int = 3
 var acceleration : int = 500
 
 func _physics_process(_delta):
-	
+
 	if Input.is_action_pressed("ui_right"):
-		position.x += max_speed 
+		position.x += max_speed
 		$AnimatedSprite2D.flip_h = false
 	if Input.is_action_pressed("ui_left"):
 		position.x -= max_speed
 		$AnimatedSprite2D.flip_h = true
 	if Input.is_action_pressed("ui_down"):
 		position.y += max_speed
-		$AnimatedSprite2D.flip_h = false 
+		$AnimatedSprite2D.flip_h = false
 	if Input.is_action_pressed("ui_up"):
 		position.y -= max_speed
 		$AnimatedSprite2D.flip_h = false
 	else:
 		position.x += 0
-	
+
 	position.x += 0
-	
+
 	if Input.is_action_just_released("ui_select"):
 		if velocity.y < 0:
 			velocity.y += 400
-	
+

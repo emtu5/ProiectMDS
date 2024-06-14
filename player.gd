@@ -11,7 +11,7 @@ var hp = MAX_HP
 
 var paused = true;
 
-## Presetez grafica caracterului, meniul de pauza, hp, label-ul cu scorul 
+## Presetez grafica caracterului, meniul de pauza, hp, label-ul cu scorul
 func _ready():
 	_animated_sprite = $AnimatedSprite2D
 	pause_menu = $PauseMenu
@@ -32,31 +32,31 @@ func pauseMenu():
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
-		
+
 	paused = !paused
-	
+
 ## Setez hp-ul
 func set_hp():
 	##set_hp_label()
 	$HealthBar.max_value = MAX_HP
 	set_hp_bar()
-	
-	
+
+
 func name():
 	return "Player"
-	
+
 ## Setez label-ul la hp (e cam mare, ma mai gandesc daca sa il folosesc sau nu)
 func set_hp_label():
 	$HealthLabel.text =  "A"
-	
-## Setez bara de hp(se updateaza hp ul actual) 
+
+## Setez bara de hp(se updateaza hp ul actual)
 func set_hp_bar():
 	$HealthBar.value = hp
 ## Setez label-ul de scor + coins.
 func set_score_label():
 
 	$ScoreLabel.text = "Score: " + str(score) + "\n" + "Coins: " + str(coins)
-	
+
 func damaged():
 	hp -= 1
 	set_hp_bar()
@@ -65,9 +65,9 @@ func damaged():
 func healed():
 	hp = MAX_HP
 	set_hp_bar()
-	
+
 func _process(_delta):
-	
+
 	 ## $TimeRemaining.text = "%s" % roundf($BulletTimer.time_left) -- ref for spells timers
 	_animated_sprite.play("Idle")
 	#pause_menu.hide()
@@ -76,7 +76,7 @@ func _process(_delta):
 			shoot()
 			$BulletTimer.start()
 		$Node2D.look_at(get_global_mouse_position())
-	
+
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
 
@@ -104,30 +104,30 @@ var max_speed : int = 3
 var acceleration : int = 500
 
 func _physics_process(_delta):
-	
+
 	##if is_on_floor()
-	
+
 	if paused == false:
 		if Input.is_action_pressed("move_right"):
-			position.x += max_speed 
+			position.x += max_speed
 			$AnimatedSprite2D.flip_h = false
 		if Input.is_action_pressed("move_left"):
 			position.x -= max_speed
 			$AnimatedSprite2D.flip_h = true
 		if Input.is_action_pressed("move_down"):
 			position.y += max_speed
-			$AnimatedSprite2D.flip_h = false 
+			$AnimatedSprite2D.flip_h = false
 		if Input.is_action_pressed("move_up"):
 			position.y -= max_speed
 			$AnimatedSprite2D.flip_h = false
 		else:
 			position.x += 0
 			position.y += 0
-		
+
 		position.x += 0
 		move_and_slide()
-	
-	
+
+
 func get_save_data():
 	return {
 		"score": score,

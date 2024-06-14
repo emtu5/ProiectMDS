@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://crxs5apufssyr"]
+[gd_scene load_steps=4 format=3 uid="uid://crxs5apufssyr"]
 
-[ext_resource type="Texture2D" uid="uid://dwe8kockg4mpv" path="res://Art/placeholder_menu_image.jpg" id="1_dos8w"]
+[ext_resource type="Texture2D" uid="uid://dyj5qq74d26dg" path="res://Art/Main Menu AI Generated Candidate Images/Designer(11).jpeg" id="1_512sm"]
 [ext_resource type="Script" path="res://menu.gd" id="1_i0tb0"]
 [ext_resource type="PackedScene" uid="uid://bposhhcmx4wae" path="res://levels/Level1.tscn" id="2_qq05i"]
 
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_dos8w")
+texture = ExtResource("1_512sm")
 expand_mode = 2
 script = ExtResource("1_i0tb0")
 start_scene = ExtResource("2_qq05i")
@@ -24,21 +24,6 @@ settings_menu = NodePath("Menu/Settings Panel")
 volume_slider = NodePath("Menu/Settings Panel/Margin/VBox/Volume/Slider")
 leaderboard_label = NodePath("Menu/Menu Margin/Menu VBox/Leaderboard")
 delete_data = NodePath("Menu/Settings Panel/Margin/VBox/Delete All Data")
-
-[node name="Freepik Credit" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -133.0
-offset_top = -24.0
-offset_right = -1.0
-offset_bottom = -1.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Image by Freepik"
 
 [node name="Menu" type="BoxContainer" parent="."]
 layout_mode = 1

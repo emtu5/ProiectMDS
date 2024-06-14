@@ -1,5 +1,9 @@
 extends CharacterBody2D
-const bulletPath = preload('res://Bullet.tscn')
+
+const BULLET_PATH = preload('res://Bullet.tscn')
+
+var max_speed : int = 3
+var acceleration : int = 500
 
 var _animated_sprite = 1
 func _ready():
@@ -14,18 +18,11 @@ func _process(_delta):
 
 
 func shoot():
-	var bullet = bulletPath.instantiate()
+	var bullet = BULLET_PATH.instantiate()
 	get_parent().add_child(bullet)
 	bullet.position = $Node2D/Marker2D.global_position
 	bullet.velocity = get_global_mouse_position() - bullet.position
 
-
-
-
-
-
-var max_speed : int = 3
-var acceleration : int = 500
 
 func _physics_process(_delta):
 

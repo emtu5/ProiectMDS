@@ -1,22 +1,28 @@
 extends CharacterBody2D
-const bulletPath = preload('res://Bullet.tscn')
-@onready var pause_menu = $PauseMenu
+const BULLET_PATH = preload('res://Bullet.tscn')
+
+const MAX_HP = 5
 
 var score = 0
 var coins = 0
-var _animated_sprite = 1
 
-var MAX_HP = 5
 var hp = MAX_HP
 
 var paused = true;
+
+var max_speed : int = 3
+var acceleration : int = 500
+
+var _animated_sprite = 1
+
+@onready var pause_menu = $PauseMenu
 
 ## Presetez grafica caracterului, meniul de pauza, hp, label-ul cu scorul
 func _ready():
 	_animated_sprite = $AnimatedSprite2D
 	pause_menu = $PauseMenu
 	set_hp()
-	pauseMenu()
+	toggle_pause_menu()
 	set_score_label()
 ## Cand ajungi la 0 hp, te despawnezi (inchidem si jocul in acelasi timp)
 func unalive():
@@ -24,7 +30,7 @@ func unalive():
 	Persistence.save_score(score)
 	get_tree().quit()
 ## Functie pentru pauza
-func pauseMenu():
+func toggle_pause_menu():
 	if paused:
 		pause_menu.hide()
 		Engine.time_scale = 1
@@ -78,7 +84,7 @@ func _process(_delta):
 		$Node2D.look_at(get_global_mouse_position())
 
 	if Input.is_action_just_pressed("pause"):
-		pauseMenu()
+		toggle_pause_menu()
 
 
 func kill():
@@ -90,18 +96,10 @@ func coin():
 	set_score_label()
 
 func shoot():
-	var bullet = bulletPath.instantiate()
+	var bullet = BULLET_PATH.instantiate()
 	get_parent().add_child(bullet)
 	bullet.position = $Node2D/Marker2D.global_position
 	bullet.velocity = get_global_mouse_position() - bullet.position
-
-
-
-
-
-
-var max_speed : int = 3
-var acceleration : int = 500
 
 func _physics_process(_delta):
 

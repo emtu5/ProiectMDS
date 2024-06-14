@@ -1,11 +1,16 @@
 extends CharacterBody2D
-const bulletPath = preload('res://Bullet.tscn')
+
+const BULLET_PATH = preload('res://Bullet.tscn')
+const MAX_HP = 3
 
 var healing = 0
-var _animated_sprite = 1
 
-var MAX_HP = 3
 var hp = MAX_HP
+
+var max_speed : int = 2
+var acceleration : int = 500
+
+var _animated_sprite = 1
 
 func _ready():
 	_animated_sprite = $AnimatedSprite2D
@@ -52,18 +57,10 @@ func _process(_delta):
 
 
 func shoot():
-	var bullet = bulletPath.instantiate()
+	var bullet = BULLET_PATH.instantiate()
 	get_parent().add_child(bullet)
 	bullet.position = $Node2D/Marker2D.global_position
 	bullet.velocity = get_global_mouse_position() - bullet.position
-
-
-
-
-
-
-var max_speed : int = 2
-var acceleration : int = 500
 
 func _physics_process(_delta):
 

@@ -1,16 +1,16 @@
 extends Node
 
-@export var _startScene : PackedScene;
-@export var _loadSave : Button;
-@export var _start : Button;
-@export var _settings : Button;
-@export var _closeSettings : Button;
-@export var _exit : Button;
-@export var _mainMenu : Node;
-@export var _settingsMenu : Node;
-@export var _volumeSlider : Slider;
-@export var _leaderboardLabel : RichTextLabel;
-@export var _deleteData : Button;
+@export var start_scene : PackedScene;
+@export var load_save : Button;
+@export var start : Button;
+@export var settings : Button;
+@export var close_settings : Button;
+@export var exit : Button;
+@export var main_menu : Node;
+@export var settings_menu : Node;
+@export var volume_slider : Slider;
+@export var leaderboard_label : RichTextLabel;
+@export var delete_data : Button;
 
 var _init_delete_label : String
 var _confirming_delete : bool = false
@@ -20,17 +20,17 @@ var _prev_scale_factor : float
 func _ready():
 	_prev_scale_factor = get_tree().root.content_scale_factor
 	get_tree().root.content_scale_factor = 1
-	_loadSave.pressed.connect(_load_save_button)
-	_loadSave.disabled = not Persistence.can_load_autosave()
-	_start.pressed.connect(_start_button)
-	_settings.pressed.connect(_settings_button)
-	_closeSettings.pressed.connect(_close_settings_button);
+	load_save.pressed.connect(_load_save_button)
+	load_save.disabled = not Persistence.can_load_autosave()
+	start.pressed.connect(_start_button)
+	settings.pressed.connect(_settings_button)
+	close_settings.pressed.connect(_close_settings_button);
 	_format_leaderboard()
-	_exit.pressed.connect(_exit_button)
-	_volumeSlider.drag_ended.connect(_volume_drag_ended)
-	_deleteData.pressed.connect(_delete_all_data)
+	exit.pressed.connect(_exit_button)
+	volume_slider.drag_ended.connect(_volume_drag_ended)
+	delete_data.pressed.connect(_delete_all_data)
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _load_save_button():
@@ -40,24 +40,24 @@ func _load_save_button():
 
 func _start_button():
 	get_tree().root.content_scale_factor = _prev_scale_factor
-	get_tree().root.add_child(_startScene.instantiate())
+	get_tree().root.add_child(start_scene.instantiate())
 	queue_free()
 
 func _settings_button():
-	_mainMenu.hide()
-	_settingsMenu.show()
+	main_menu.hide()
+	settings_menu.show()
 
 func _close_settings_button():
-	_mainMenu.show();
-	_settingsMenu.hide();
+	main_menu.show();
+	settings_menu.hide();
 
 func _volume_drag_ended(value_changed: bool):
 	if not value_changed:
 		return
 	# TODO: slider is from 0 to 100, is this the right scale? maybe it should be 0 to 1 or something
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), _volumeSlider.value)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), volume_slider.value)
 	# TODO: instead of printing to console, play a test sound, like when setting the volume in Windows
-	print("set volume to %f" % _volumeSlider.value)
+	print("set volume to %f" % volume_slider.value)
 
 func _format_leaderboard():
 	var scores = Persistence.score_load()
@@ -70,17 +70,17 @@ func _format_leaderboard():
 		else:
 			text += "N/A\n"
 	text += "[/center]"
-	_leaderboardLabel.bbcode_text = text
+	leaderboard_label.bbcode_text = text
 
 func _delete_all_data():
 	if not _confirming_delete:
-		_init_delete_label = _deleteData.text
-		_deleteData.text = "Are you sure? Save data and leaderboard will be lost."
+		_init_delete_label = delete_data.text
+		delete_data.text = "Are you sure? Save data and leaderboard will be lost."
 		_confirming_delete = true
 	else:
 		Persistence.delete_autosave()
 		Persistence.delete_scores()
-		_deleteData.text = _init_delete_label
+		delete_data.text = _init_delete_label
 		_format_leaderboard()
 		_confirming_delete = false
 

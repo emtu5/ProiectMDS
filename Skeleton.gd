@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
+const MAX_HEALTH : float = 15.0
+const SPEED = 50
 
 @export var player : Node
 var chase = false
-const MAX_HEALTH : float = 15.0
 var health : float = MAX_HEALTH
-const SPEED = 50
 var damage_target = null
 
 func _ready():

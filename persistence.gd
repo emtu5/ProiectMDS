@@ -1,14 +1,15 @@
 extends Node
 
+const AUTOSAVE_INTERVAL_MSEC: float = 1000.0
+const SAVE_GROUP: String = "Save"
+const SAVE_FILE: String = "autosave.json"
+const SCORES_FILE: String = "scores.json"
+
 var _scene_to_autosave: Node = null
 var _scene_save_nodes: Array[Node] = []
 var _time_since_autosave: float = 0.0
-const AUTOSAVE_INTERVAL_MSEC: float = 1000.0
-const SAVE_GROUP: String = "Save"
 
 var _save_location: String = "user://"
-const SAVE_FILE: String = "autosave.json"
-const SCORES_FILE: String = "scores.json"
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
